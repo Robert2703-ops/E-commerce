@@ -1,0 +1,31 @@
+.span {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.10s;
+}
+
+.span span {
+    color: red;
+}
+
+.span.show {
+    display: flex;
+}
+
+.show .error-message {
+    animation: open-error-span .3s;
+}
+
+@keyframes open-error-span {
+    from {
+        opacity: 0;
+        transform: translate3d( -25px, 0, 0 );
+    }
+    to {
+        opacity: 1;
+        transform: translate3d( 0, 0, 0 );
+    }
+}
