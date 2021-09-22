@@ -12,17 +12,24 @@
     <form action="{{ route('login') }}" method="post">
         @csrf
         <div>
-            <label for="">Email: </label>
-            <input type="email" name="email" id="">
+            <label for="" class="form-label">Email: </label>
+            <input type="email" name="email" class="input-info input">
         </div>
 
         <div>
-            <label for="">Password: </label>
-            <input type="password" name="password" id="">
+            <label for="" class="form-label">Password: </label>
+            <div class="show-password">
+                <input type="password" name="password" class="input-info input">
+                <button type="button"><i class="fas fa-eye-slash"></i></button>
+            </div>
         </div>
 
         <div>
-            <input type="submit" value="login">
+            <input type="submit" value="login" class="input-submit submit">
         </div>
     </form>
+@endsection
+
+@section('link')
+    <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
 @endsection

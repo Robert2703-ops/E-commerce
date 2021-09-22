@@ -1,0 +1,102 @@
+.form {
+    width: 100%;
+    height: auto;
+}
+
+ul.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.link {
+    width: 60%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.link a {
+    transition: 0.10s;
+}
+
+.link a:hover {
+    font-size: 20px;
+}
+
+.form-content form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-size: 18px;
+}
+
+input.input-info {
+    width: 30%;
+    height: 22px;
+
+    text-align: center;
+    font-size: 16px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    transition: 0.15s;
+}
+input.input-info:hover, input.input-info:focus {
+    width: 35%;
+}
+
+input.input-submit {
+    width: 15%;
+    height: 35px;
+
+    font-size: 20px;
+    
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+input.input-submit:hover, input.input-submit:focus {
+    width: 20%;
+}
+
+/* show password */
+.show-password {
+    width: 100%;
+
+    flex-direction: row !important;
+    justify-content: center;
+
+    position: relative;
+}
+
+.show-password button {
+    height: 100%;
+
+    position: absolute;
+    right: 29%;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+}
+
+.show-password button i {
+    font-size: 20px;
+
+    cursor: pointer;
+}

@@ -39,13 +39,24 @@ class ProductsPageController extends Controller
 
     // put
     public function change( int $id, Request $request ) {
-        $product = $request->validate([
-            'name' => 'required|string|min: 4|max: 255|unique:products,name',
-            'category' => 'in:smartphone,PC,peripherals',
-            'price' => 'required'
-        ]);
-
+        $productName = Products::all()->where('id', $id)->first(); 
+        
+        if ( $productName['name'] !== $request->name ) {
+            $product = $request->validate([
+                'name' => 'required|string|min: 4|max: 255|unique:products,name',
+                'category' => 'in:smartphone,PC,peripherals',
+                'price' => 'required'
+            ]);
+        }
+        else {
+            $product = $request->validate([
+                'category' => 'in:smartphone,PC,peripherals',
+                'price' => 'required'
+            ]);
+        }
         Products::where('id', $id)->update($product);
+
+        return redirect()->back()->with("Product changed!");
     }
 
     // delete

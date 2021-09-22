@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background-color: #02475E;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.flex-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    width: 70%;
+    height: auto;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    box-shadow: 5px 6px 19px black;
+}
+
+.input {
+    color: black;
+
+    border: 2px solid #02475E;
+}
+
+.input:focus {
+    border: 3px solid #02475E;
+}
+
+.submit {
+    background-color: #02475E;
+
+    color: white;
+
+    border-radius: 5px;
+    border: 1px solid #02475E;
+}

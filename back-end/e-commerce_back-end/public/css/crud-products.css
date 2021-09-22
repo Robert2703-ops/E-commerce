@@ -1,3 +1,188 @@
+.logout {
+    display: flex;
+    align-self: flex-end;
+
+    width: 10%;
+    height: 30px;
+
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.logout form, .logout form input {
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+    border: 1px solid #FF4848; /* FF2626 */
+
+    transition: 0.10s;
+}
+
+.logout form:hover, .logout form input:hover {
+    background: #FF4848;
+
+    border: none;
+
+    color: white;
+}
+
+/* table */
+.products, .products table {
+    width: 100%;
+    height: auto;
+}
+
+.product-options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option {
+    width: 45%;
+    height: 26px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.change-product button, .delete-product form, .delete-product form .delete, .delete-product form .delete button {
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+} 
+
+/* --table buttons */ 
+.product-options button {
+    font-size: 15px;
+}
+
+.option.change-product button {
+    border: 1px solid #6ECB63;
+
+    transition: 0.10s;
+}
+.option.change-product button:hover {
+    background: #6ECB63;
+
+    color: white;
+}
+
+.option.delete-product button {
+    border: 1px solid #FF4848;
+
+    transition: 0.10s;
+}
+.option.delete-product button:hover {
+    background: #FF4848;
+
+    color: white;
+}
+
+/* create-product button */
+.create-product {
+    height: 25px;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.create-product button {
+    width: 20%;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+.create-product button:hover, .create-product button:focus {
+    width: 25%;
+}
+
+/* Modals */
+.modal-product {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input-radio {
+    margin-bottom: 18px;
+
+    display: flex;
+}
+
+.input-radio {
+    margin-left: 5px;
+    display: flex;
+}
+
+.input-radio div {
+    margin-right: 10px;
+}
+
+.form-label {
+    font-size: 18px;
+}
+
+input.input-info {
+    width: 50%;
+    height: 22px;
+
+    text-align: center;
+    font-size: 16px;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: 0.15s;
+}
+input.input-info:hover, input.input-info:focus {
+    width: 55%;
+}
+
+.submit-button{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 10px;
+}
+
+button.input-submit {
+    width: 15%;
+    height: 35px;
+
+    font-size: 20px;
+    
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+button.input-submit:hover, input.input-submit:focus {
+    width: 20%;
+}   
+
+
 .span {
     display: none;
 
@@ -28,4 +213,54 @@
         opacity: 1;
         transform: translate3d( 0, 0, 0 );
     }
+}
+
+.delete-options {
+    width: 50%;
+
+    padding-bottom: 10px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete-options div {
+    width: 45%;
+}
+
+.delete-options div button{
+    width: 100%;
+    height: 30px;
+
+    font-size: 18px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.options.modal-product p {
+    font-size: 22px;
+}
+
+#delete {
+    border: 1px solid #FF4848;
+
+    transition: 0.10s;
+}
+#delete:hover {
+    background: #FF4848;
+
+    color: white;
+}
+
+#cancel {
+    border: 1px solid black;
+
+    transition: 0.10s;
+}
+#cancel:hover {
+    background: black;
+
+    color: white;
 }

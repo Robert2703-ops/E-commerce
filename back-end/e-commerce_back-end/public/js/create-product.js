@@ -7,7 +7,7 @@ function openModal (idModal) {
     modal.classList.add('show')
 
     modal.addEventListener('click', (event) => {
-        if ( event.target.id == idModal || event.target.className == "close" )
+        if ( event.target.id == idModal || event.target.className == "close" || event.target.className == "fas fa-times")
         {
             modal.classList.remove('show')
         }
@@ -21,7 +21,7 @@ function validationFields( formClass ) {
 
     for ( let index = 0; index < inputs.length; index += 1 ){
         inputs[index].addEventListener( 'blur', () => {
-            let span = inputs[index].parentElement.querySelector('span')
+            let span = inputs[index].parentElement.parentElement.querySelector('span')
             let divSpan = span.parentElement
 
             if ( (inputs[index].type === 'text' && inputs[index].value.length < 4) || (inputs[index].type === 'number' && inputs[index].value <= 0) ) {
