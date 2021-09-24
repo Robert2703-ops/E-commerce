@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\crud_products\ProductsPageController;
+use App\Http\Controllers\api\ProductsApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/products/{id}', [ProductsPageController::class, 'product']);
+Route::get('/products', [ProductsApiController::class, 'allProducts']);
 
 Route::group([
     'middleware' => 'auth',
