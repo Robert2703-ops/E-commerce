@@ -50,8 +50,8 @@
                 this.products = response.products
             }
 
-            console.log(this.products)
-            console.log(response)
+            // console.log(this.products)
+            // console.log(response)
         }
      }
 </script>
@@ -128,4 +128,10 @@
 
     border: 2px solid red;
 }
+
+/* responsive layout */
+@media only screen and ( max-width: 530px ) {
+
+}
+
 </style>
