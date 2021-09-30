@@ -55,7 +55,6 @@
 </template>
 
 <script>
-
     export default {
         name: 'NavHeader',
         data() {
@@ -69,118 +68,117 @@
 
         },
         created() {
-            const width = window.screen.width
+            this.ViewPort()
+        },
+        methods: {
+            ViewPort() {
+                const width = window.screen.width
 
-            if ( width <= 530 ) {
-                this.width.mobile = true
-                this.width.tablet = false
-                this.width.desktop = false
+                if ( width <= 530 ) {
+                    this.width.mobile = true
+                    this.width.tablet = false
+                    this.width.desktop = false
+                }
 
-                console.log( this.width )
-            }
+                else if ( width >= 540 && width <= 1024 ){
+                    this.width.mobile = false
+                    this.width.tablet = true
+                    this.width.desktop = false
+                }
 
-            else if ( width >= 540 && width <= 1024 ){
-                this.width.mobile = false
-                this.width.tablet = true
-                this.width.desktop = false
-
-                console.log( this.width )
-            }
-
-            else {
-                this.width.mobile = false
-                this.width.tablet = false
-                this.width.desktop = true
-
-                console.log( this.width )
-            }
-        }
+                else {
+                    this.width.mobile = false
+                    this.width.tablet = false
+                    this.width.desktop = true
+                }    
+            },
+        },
     }
 
 </script>
 
 <style>
-header.header {
-    width: 100%;
-}
+    header.header {
+        width: 100%;
+    }
 
-.desktop {
-    display: flex;
-    justify-content: space-between;
-}
-
-header.header .option {
-    width: 30%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-ul.navigation {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-around;
-
-    padding: 0;
-}
-
-.option.search-cart {
-    display: flex;
-    align-items: center;
-    justify-content: space-between !important;
-}
-
-.search-container input.search {
-    margin-left: 5px;
-}
-
-.search-container {
-    /* height: 100%; */
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.user-profile-cart {
-    width: 30%;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-.user-profile-cart .user-profile, .user-profile-cart .cart {
-    font-size: 25px;
-    
-    display: flex;
-    justify-content: center;
-}
-
-.desktop, .mobile {
-    width: 100%;
-}
-/* responsive */
-@media only screen and ( max-width: 530px ) {
-    .mobile {
+    .desktop {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
     }
-    .header .mobile .option {
-        width: 100%; 
-        /* justify-content: space-between !important; */
-    }
-    .search-cart {
+
+    header.header .option {
+        width: 30%;
+
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    input.search {
-        width: 55%;
+
+    ul.navigation {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+
+        padding: 0;
     }
+
+    .option.search-cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between !important;
+    }
+
+    .search-container input.search {
+        margin-left: 5px;
+    }
+
+    .search-container {
+        /* height: 100%; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user-profile-cart {
+        width: 30%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
     .user-profile-cart .user-profile, .user-profile-cart .cart {
-        font-size: 20px;
+        font-size: 25px;
+
+        display: flex;
+        justify-content: center;
     }
-}
+
+    .desktop, .mobile {
+        width: 100%;
+    }
+    /* responsive */
+    @media only screen and ( max-width: 530px ) {
+        .mobile {
+            display: flex;
+            flex-direction: column;
+        }
+        .header .mobile .option {
+            width: 100%;
+            /* justify-content: space-between !important; */
+        }
+        .search-cart {
+            display: flex;
+        }
+        input.search {
+            width: 55%;
+        }
+        .user-profile-cart .user-profile, .user-profile-cart .cart {
+            font-size: 20px;
+        }
+    }
 
 
 </style>

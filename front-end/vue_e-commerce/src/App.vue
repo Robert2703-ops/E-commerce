@@ -17,10 +17,21 @@
 
   export default {
     name: 'App',
+    data() {
+      return {
+        message: "ok ok ok"
+      }
+    },
     components: {
       NavHeader,
       Home,
       Market
+    },
+    created() {
+
+    },
+    methods: {
+
     }
   }
 </script>

@@ -3,9 +3,9 @@
         <div class="messages">
             <div class="card message-cart">
                 <div>
-                    <h2>kdejghkljdfajghfdjknbfdjnbknjmfndkbjmn
-                    fdknbfjdnbfnbçdjfnbjkfn
-                    dblkfndklnfhlnlkndf</h2>
+                    <h2>kdejghkljdfaj ghfdjknbfdj nbknjmfndkbjmn
+                    fdknbfjdnb fnbçdjfnbjkfn
+                    </h2>
                 </div>
 
                 <div class="cart">
@@ -33,10 +33,17 @@
         name: 'Home',
         data() {
             return {
-                products: []
+                products: [],
+                width: {
+                    mobile: false,
+                    tablet: false,
+                    desktop: true
+                }
             }
         },
         async created() {
+            this.ViewPort()
+
             const options = {
                 method: 'GET',
                 mode: 'cors',
@@ -49,10 +56,32 @@
             if (response.status) {
                 this.products = response.products
             }
+        },
+        methods: {
+            ViewPort() {
+                console.log("ok ok ok")
+                const width = window.screen.width
 
-            // console.log(this.products)
-            // console.log(response)
+                if ( width <= 530 ) {
+                    this.width.mobile = true
+                    this.width.tablet = false
+                    this.width.desktop = false
+                }
+
+                else if ( width >= 540 && width <= 1024 ){
+                    this.width.mobile = false
+                    this.width.tablet = true
+                    this.width.desktop = false
+                }
+
+                else {
+                    this.width.mobile = false
+                    this.width.tablet = false
+                    this.width.desktop = true
+                }    
+            },
         }
+        
      }
 </script>
 
@@ -68,7 +97,7 @@
 .messages {
     width: 80%;
 
-    margin-bottom: 14%;
+    margin-bottom: 11%;
     margin-top: 5%;
 
     display: flex;
@@ -85,6 +114,10 @@
 
 .card.product-image {
     justify-content: center;
+}
+
+.card.product-image img {
+    width: 100%;
 }
 
 .cart {
@@ -117,21 +150,44 @@
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product {
     width: 20%;
     height: 180px;
 
-    margin: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
     border: 2px solid red;
 }
 
 /* responsive layout */
 @media only screen and ( max-width: 530px ) {
+    .home-content .messages {
+        flex-direction: column;
+    }
 
+    .home-content .messages .card {
+        width: 100%;
+        
+        margin-bottom: 5px;
+
+        justify-content: center;
+    }
+
+    .card.message-cart h2 {
+        text-align: center;
+    }
+
+    .on-sale-products .product {
+        width: 40%;
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+       /* margin: 10px 5px; */
+    }
 }
 
 </style>

@@ -4,7 +4,12 @@
 
 <script>
     export default {
-        name: 'Market'
+        name: 'Market',
+        props: {
+            Test: {
+                type: String
+            }
+        }
     }
 </script>
 
