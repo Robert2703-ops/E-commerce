@@ -14,7 +14,7 @@
                     <router-link v-bind:to="'#'">Test</router-link>
                 </ul>
             </div>
-            <div class="option search-cart">
+            <div v-if="" class="option search-cart">
                 <div class="search-container">
                     <div><i class="fas fa-search"></i></div>
                     <input type="text" class="search" placeholder="search">
@@ -37,10 +37,10 @@
                         <div><i class="fas fa-search"></i></div>
                         <input type="text" class="search" placeholder="search">
                     </div>
-                <div class="user-profile-cart">
-                    <div class="user-profile"><i class="fas fa-user"></i></div>
-                    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
-                </div>
+                    <div class="user-profile-cart" v-if="verify">
+                        <div class="user-profile"><i class="fas fa-user"></i></div>
+                        <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+                    </div>
                 </div>
             </div>
             <div class="option">
@@ -56,6 +56,7 @@
 
 <script>
     export default {
+        props: ['data'],
         name: 'NavHeader',
         data() {
             return {
@@ -63,7 +64,9 @@
                     mobile: false,
                     tablet: false,
                     desktop: true
-                }
+                },
+                verify: this.data,
+                test: 1
             }
 
         },
@@ -91,7 +94,7 @@
                     this.width.tablet = false
                     this.width.desktop = true
                 }    
-            },
+            }
         },
     }
 

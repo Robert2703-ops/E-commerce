@@ -30,6 +30,7 @@
 
 <script>
     export default {
+        props: ['data'],
         name: 'Home',
         data() {
             return {
@@ -41,25 +42,26 @@
                 }
             }
         },
-        async created() {
+        created() {
             this.ViewPort()
-
-            const options = {
-                method: 'GET',
-                mode: 'cors',
-                cache: 'default'
-            }
-
-            const requisition = await fetch ( "http://127.0.0.1:8000/api/products", options )  
-            const response = await requisition.json()
-
-            if (response.status) {
-                this.products = response.products
-            }
+            this.Products()
         },
         methods: {
+            async Products() {
+                const options = {
+                    method: 'GET',
+                    mode: 'cors',
+                    cache: 'default'
+                }
+
+                const requisition = await fetch ( "http://127.0.0.1:8000/api/products", options )  
+                const response = await requisition.json()
+
+                if (response.status) {
+                    this.products = response.products
+                }
+            },
             ViewPort() {
-                console.log("ok ok ok")
                 const width = window.screen.width
 
                 if ( width <= 530 ) {

@@ -1,8 +1,8 @@
 <template>
   <div id="app"> 
-    <NavHeader></NavHeader>
+    <NavHeader v-bind:data="access"></NavHeader>
 
-    <router-view></router-view>
+    <router-view v-bind:data="access"></router-view>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
     name: 'App',
     data() {
       return {
-        message: "ok ok ok"
+        access: false
       }
     },
     components: {
@@ -31,7 +31,16 @@
 
     },
     methods: {
+      Access() {
+        const token = localStorage.getItem('acces-token')
 
+        if ( token ) {
+          this.access = true
+        }
+        else {
+          this.acces = false
+        } 
+      }
     }
   }
 </script>
